@@ -1,0 +1,59 @@
+Capítulo 6 - Manipulando Strings
+
+
+
+Jeito de utilizar strings
+
+aspas duplas -> texto = “ nunca vi uma cobra d’agua ”     #já que o tipo string(texto) comça começa com aspas duplas, python não vai entender o ‘ como fim da string.
+
+
+caracteres de escape -> são usados no lugar de caracteres impossíveis de
+colocar em uma string. Consiste nessa barrinha torta (\) seguida do caractere que você quer usar na string. Por exemplo para usar o ' em uma string  é
+\'.
+
+Caracteres de escape       Imprimir
+\'                      Single quote (apostrofo)
+\"                      Double quote (aspas duplas)
+\t                      Tab (
+\n                      Newline (nova linha)
+\\                      Backslash (barrinha torta)
+
+strings puras (raw strings) -> ignora todoas os caracteres de escape e são
+úteis quando você está utilizando strings que contém muitas , como um caminho
+de arquivos r'C:Users\Desktop\Documents'
+Utiliza-se assim:
+
+Strings multi-linhas com apostrofos triplas -> ao invés de usar o caracteres
+\n para colocar novas linhas em uma string, você pode usar apostrofos triplas. Aspas,tabs ou novas linhas dentro de apostrofos triplos são consideras partes da string. 
+Digite:
+print('''Querido diário,
+hoje eu tirei uma soneca de fim de tarde
+e tomei dois copos d'agua ''')
+
+Comentários multi-linhas ->
+""" com
+ent
+ário"""
+
+** isX() methods ->
+
+isalpha() Returns True if the string consists only of letters and isn’t blank
+isalnum() Returns True if the string consists only of letters and numbers and is not blank
+isdecimal() Returns True if the string consists only of numeric characters and is not blank
+isspace() Returns True if the string consists only of spaces, tabs, and newlines and is not blank
+istitle() Returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters
+
+** startswith() and endswith() methods
+
+** partition() -> separate o antes, separados e depois 
+>> 'Hello, world!'.partition('w')
+('Hello, ', 'w', 'orld!')
+
+** rjust(), ljust(), and center() Methods -> justifica os textos
+
+** strip(), rstrip(), and lstrip() Methods -> retorna a string sem os
+caracteres dentro do ()
+
+** pyperclip -> pega e joga do clipboard
+ pyperclip.copy('') 
+ pyperclip.paste()
