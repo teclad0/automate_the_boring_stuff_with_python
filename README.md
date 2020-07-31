@@ -1,2 +1,2 @@
 # automate_the_boring_stuff_with_python
-Hello!
+Repositório para armazenar minhas atividades do livro. 
