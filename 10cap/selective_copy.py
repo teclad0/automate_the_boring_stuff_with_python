@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # selective_copy.py : walks through a folder tree and searches for files
-#   with the file extension given by the user and copies these file#   s to a  new folder.
+#   with the file extension given by the user and copies these files to a ne# w folder
 # Usage : ./selective_copy.py <extension> <place>
 
 from pathlib import Path
