@@ -8,12 +8,9 @@ import os,re, shutil, sys
 
 # Extension from command line
 ext_from_user = sys.argv[1].lower()
-copy_dir = sys.argv[2].lower() 
+copy_from_user = sys.argv[2].lower() 
 print(f'Moving all files with: .{ext_from_user}')
-print(f'to dir: {copy_dir}')
-
-# Extension regex
-ext = re.compile(rf'.{ext_from_user}')
+print(f'to dir: {copy_from_user}')
 
 # List with the files to copy
 files_path =[]
@@ -21,12 +18,16 @@ files_path =[]
 # Getting the current directory
 current_dir = Path.cwd()
 
-# Getting all the files inside the current directory
-for filename in os.listdir('.'):
-    if ext.search(filename) != None:
-        files_path.append(os.path.abspath(filename))
+copy_dir = os.path.abspath(copy_from_user)
 
-# Copying the files
-for file in files_path:
-    shutil.copy(file, current_dir / copy_dir)
+# creates file if it doesn't exist
+if not os.path.exists(copy_dir):
+    os.makedirs(copy_dir)
+
+# copies files
+for filename in os.listdir('.'):
+    if filename.endswith(ext_from_user):
+        filepath = os.path.join(os.path.abspath(current_dir), filename)
+        shutil.copy(filepath, copy_from_user) 
+
 
