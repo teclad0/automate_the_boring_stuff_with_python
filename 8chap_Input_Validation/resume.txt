@@ -1,0 +1,60 @@
+CAP 8 - INPUT VALIDATION
+
+
+pyinputplus - MODULE
+pip install --user pyiputplus
+import pyinputplus
+
+FUNCTIONS -
+
+inputStr() Is like the built-in input() function but has the general PyInputPlus features. You can also pass a custom validation function to it
+
+inputNum() Ensures the user enters a number and returns an int or float, depending on if the number has a decimal point in it
+
+inputChoice() Ensures the user enters one of the provided choices
+
+inputMenu() Is similar to inputChoice(), but provides a menu with numbered or lettered options
+
+inputDatetime() Ensures the user enters a date and time
+
+inputYesNo() Ensures the user enters a “yes” or “no” response
+
+inputBool() Is similar to inputYesNo(), but takes a “True” or “False” response and returns a Boolean value
+
+inputEmail() Ensures the user enters a valid email address
+
+inputFilepath() Ensures the user enters a valid file path and filename, and can optionally check that a file with that name exists
+
+inputPassword() Is like the built-in input(), but displays * characters as the user types so that passwords, or other sensitive information, aren’t displayed on the screen
+
+//
+inputNum(), inputInt(), inputFloat() - min, max, greaterThan, lessThan
+ex: >>> response = pyip.inputNum('Enter num: ', min=4)
+
+BLANK KEYWORD -
+>>> response = pyip.inputNum(blank=True)
+
+LIMIT, TIMEOUT, DEFAULT
+>>> response = pyip.inputNum(limit=2) : only 2 answers allowed
+>>> response = pyip.inputNum(timeout=10) : waits 10 seconds
+>>> response = pyip.inputNum(limit=2, default='N/A') : if no answer, 'N/A'
+
+ALLOWREGEXES, BLOCKREGEXES
+ response = pyip.inputNum(allowRegexes=[r'(I|V|X|L|C|D|M)+', r'zero']) : po
+de usar regex
+>>> response = pyip.inputNum(blockRegexes=[r'[02468]$']) : lista q n sera aceita
+
+INPUTCUSTOM() -
+    Accepts a single string argument of what the user entered
+
+    Raises an exception if the string fails validation
+
+    Returns None (or has no return statement) if inputCustom() should return    the string unchanged
+
+    Returns a non-None value if inputCustom() should return a different stri    ng from the one the user entered
+
+    Is passed as the first argument to inputCustom()
+
+
+
+
